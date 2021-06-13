@@ -105,6 +105,8 @@ function ControlWeb() {
         $("#pie").append('<button type="button" id="cerrar" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>');
         $('#modalGeneral').modal("show");
     }
+
+
     this.mostrarModalTarea = function(tarea){
         this.limpiarModal();
         var texto = "<p id='tarea'>"+tarea+"</p>";
