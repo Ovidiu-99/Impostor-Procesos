@@ -145,7 +145,7 @@ function Partida(num, owner, codigo, juego) {
 	this.codigo = codigo;
 	this.usuarios = {};
 	this.elegido = "no hay nadie elegido";
-	this.tareas = ["jardines", "calles", "mobiliario", "basuras"];
+	this.tareas = ["jardines", "calles", "mobiliario", "basuras", "playas"];
 	this.ganador;
 	this.agregarUsuario = function (nick) {
 		return this.fase.agregarUsuario(nick, this);
