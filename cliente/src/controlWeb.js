@@ -147,9 +147,9 @@ function ControlWeb() {
         this.limpiar();
         var cadena = '<div id="mPA">';
         if(mostrarGanador){
-            cadena = cadena + '<h3>Partidas Terminadas</h3>';
+            cadena = cadena + '<h3><p style = "color: white;">Partidas acabadas</p></h3>';
         }else{
-            cadena = cadena + '<h3>Partidas Creadas</h3>';
+            cadena = cadena + '<h3><p style = "color: white;">Partidas creadas</p></h3>';
         }
         
         cadena = cadena + '<div class="list-group">'
