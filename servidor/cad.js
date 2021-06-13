@@ -4,8 +4,6 @@ var ObjectID = require("mongodb").ObjectID;
 function Cad() {
     this.partidas = undefined;
 
-
-    //// Partidas
     this.insertarPartida = function (partida, callback) {
         insertar(this.partidas, partida, callback);
     }
@@ -25,9 +23,6 @@ function Cad() {
     this.eliminarPartida = function (uid, callback) {
         eliminar(this.partidas, { _id: ObjectID(uid) }, callback);
     }
-
-
-    //// funciones genéricas
 
     function obtenerTodos(coleccion, callback) {
         coleccion.find().toArray(function (error, col) {
@@ -77,8 +72,6 @@ function Cad() {
             }
         });
     }
-    //mongodb+srv://ovidiu:impostor@cluster0.3fvbx.mongodb.net/impostor?retryWrites=true&w=majority
-    //método para conectar
     this.connect = function (callback) {
         var cad = this;
         mongo.connect("mongodb+srv://ovidiu:impostor@cluster0.3fvbx.mongodb.net/impostor?retryWrites=true&w=majority", { useUnifiedTopology: true }, function (err, database) {

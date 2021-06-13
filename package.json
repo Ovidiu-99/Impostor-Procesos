@@ -1,5 +1,5 @@
 {
-  "name": "impostorremastered",
+  "name": "impostor-procesos",
   "version": "1.0.0",
   "description": "Juego del impostor",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JuanmaVU-Dev/impostorRemastered.git"
+    "url": "git+https://github.com/Ovidiu-99/Impostor-Procesos.git"
   },
   "keywords": [
     "juego"
@@ -16,9 +16,9 @@
   "author": "Juan Manuel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JuanmaVU-Dev/impostorRemastered/issues"
+    "url": "https://github.com/Ovidiu-99/Impostor-Procesos/issues"
   },
-  "homepage": "https://github.com/JuanmaVU-Dev/impostorRemastered#readme",
+  "homepage": "https://github.com/Ovidiu-99/Impostor-Procesos#readme",
   "dependencies": {
     "express": "^4.17.1",
     "jasmine-node": "^3.0.0",

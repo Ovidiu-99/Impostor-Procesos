@@ -130,7 +130,6 @@ function Juego(min, test) {
 		}
 	}
 
-	//this.cad.connect();
 	if(test == "noTest"){
 		this.cad.connect(function(db){
 			console.log("conectado a Atlas");
@@ -192,7 +191,6 @@ function Partida(num, owner, codigo, juego) {
 		var keys = Object.keys(this.usuarios);
 		var usuarioAleatorio = keys[randomInt(0, keys.length)];
 		this.usuarios[usuarioAleatorio].asignarImpostor();
-		//this.usuarios[usuarioAleatorio].impostor = true;
 	}
 	this.abandonarPartida = function (nick) {
 		this.fase.abandonarPartida(nick, this);
@@ -331,7 +329,6 @@ function Partida(num, owner, codigo, juego) {
 	}
 	this.finalVotacion = function(){
 		this.fase = new Jugando();
-		//this.reiniciarContadoresVotaciones(); //ha votado, skip, elegido
 		this.comprobarFinal();
 	}
 	this.reiniciarContadoresVotaciones = function(){
@@ -433,9 +430,6 @@ function Inicial() {
 	this.nombre = "Inicial";
 	this.agregarUsuario = function (nick, partida) {
 		return partida.puedeAgregarUsuario(nick);
-		// if (partida.comprobarMinimo()) {
-		// 	partida.fase = new Completado();
-		// }
 	}
 	this.iniciarPartida = function (partida) {
 		console.log("Faltan jugadores");
@@ -535,7 +529,7 @@ function Final() {
 	}
 	this.abandonarPartida = function (nick, partida) {
 		//partida.puedeAbandonarPartida();
-		//esto es absurdo (salvo para javier xd)
+		//esto es absurdo (salvo para javier xddd)
 		//eliminar el usuario y comprobar si no quedan usuarios
 	}
 	this.atacar = function (nick, partida) {
@@ -651,18 +645,6 @@ function Muerto() {
 function randomInt(low, high) {
 	return Math.floor(Math.random() * (high - low) + low);
 }
-
-// function inicio() {
-// 	juego = new Juego()
-// 	var usr = new Usuario("Pepe")
-// 	var codigo = usr.crearPartida(4);
-
-// 	juego.unirAPartida(codigo, "luis");
-// 	juego.unirAPartida(codigo, "luisa");
-// 	juego.unirAPartida(codigo, "luisito");
-
-// 	usr.iniciarPartida();
-// }
 
 module.exports.Juego = Juego;
 module.exports.Usuario = Usuario;

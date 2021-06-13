@@ -1,11 +1,11 @@
 function ControlWeb() {
     this.mostrarCrearPartida = function (min) {
         var cadena =      '<div id="mostrarCP">'
-        cadena = cadena + '<h3>Crear partida</h3>';
+        cadena = cadena + '<h3><p style = "color: white;">Crear partida</p></h3>';
         cadena = cadena +   '<form class="form-inline">';
         cadena = cadena +       '<div class="input-group">';
-        cadena = cadena +           '<span for="usr" class="input-group-addon">Nick</span>';
-        cadena = cadena +           '<input type="txt" class="form-control" id="nick" placeholder="Nombre en el juego">';
+        cadena = cadena +           '<span for="usr" class="input-group-addon">Nombre de tu personaje</span>';
+        cadena = cadena +           '<input type="txt" class="form-control" id="nick" value="Eusebio">';
         cadena = cadena +       '</div>';
         cadena = cadena +       '<div class="input-group">';
         cadena = cadena +           '<span for="num" class="input-group-addon">Número</span>';
@@ -14,7 +14,7 @@ function ControlWeb() {
         cadena = cadena +   '</form>';
         cadena = cadena +   '<form action="/action_page.php">';
         cadena = cadena +       '<div class="form-group">';
-        cadena = cadena +           '<br><button type="button" id="btnCrear" class="btn btn-primary">Crear partida</button>';
+        cadena = cadena +           '<br><button type="button" id="btnCrear" class="btn btn-primary">Crear sala</button>';
         cadena = cadena +       '</div>';
         cadena = cadena +   '</form>';
         cadena = cadena + '</div>';
@@ -26,14 +26,12 @@ function ControlWeb() {
                 $('#mostrarCP').remove();
                 ws.crearPartida(nick, num);
             }
-            //mostrar esperarando rival
-            //controlar la entrada
         });
     }
     this.mostrarEsperandoRival = function () {
         this.limpiar();
         var cadena = '<div id="mER">';
-        cadena = cadena + '<img src="cliente/img/loading.gif" class="img-rounded" alt="loading image">';
+        cadena = cadena + '<img src="cliente/img/waiting.jpg" class="img-rounded" alt="loading image">';
         if(ws.owner){
             cadena = cadena + '<br>'
             cadena = cadena + '<button type="button" id="btnIniciar" class="btn btn-primary">Iniciar partida</button>';
@@ -48,7 +46,7 @@ function ControlWeb() {
     this.mostrarUnirAPartida = function (lista) {
         $('#mUAP').remove();
         var cadena = '<div id = "mUAP">';
-        cadena = cadena + '<h3>Lista de partidas</h3>';
+        cadena = cadena + '<h3><p style = "color: white;">Lista de salas</p></h3>';
         cadena = cadena + '<div  class="list-group">';
         for (var i = 0; i < lista.length; i++) {
             var maximo=lista[i].maximo;
@@ -58,7 +56,7 @@ function ControlWeb() {
             cadena = cadena + '</a>';
         }
         cadena = cadena + '</div>';
-        cadena = cadena + '<button type="button" id="btnUnir" class="btn btn-primary">Unir a partida</button>';
+        cadena = cadena + '<button type="button" id="btnUnir" class="btn btn-primary">Unir a sala</button>';
         cadena = cadena + '</div>';
         $('#unirAPartida').append(cadena);
         StoreValue = [];
