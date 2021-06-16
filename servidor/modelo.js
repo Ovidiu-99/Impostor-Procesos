@@ -556,7 +556,7 @@ function Usuario(nick) {
 	this.estado = new Vivo();
 	this.estadoTarea = "no completado";
 	this.realizado = 0;
-	this.maxTarea = 3;
+	this.maxTarea = 10;
 	this.estadoVivo = function(){
 		return this.estado.estadoVivo();
 	}
