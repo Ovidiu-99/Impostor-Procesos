@@ -38,9 +38,10 @@ var teclaV;
 var teclaT;
 var jugadores = {}; //colección de jugadores remotos
 var crear;
-var recursos = [{ frame: 0, sprite: "juan" }, { frame: 0, sprite: "juan" }, { frame: 0, sprite: "juan" }, { frame: 3, sprite: "pepa" },
-{ frame: 9, sprite: "gerardo" }, { frame: 48, sprite: "paca" }, { frame: 48, sprite: "paca" }, { frame: 51, sprite: "manuela" }
-  , { frame: 48, sprite: "paca" }, { frame: 51, sprite: "manuela" }];
+var recursos = [{ frame: 0, sprite: "juan" }, { frame: 3, sprite: "pepa" },
+{ frame: 9, sprite: "gerardo" }, { frame: 6, sprite: "paca" },
+{ frame: 0, sprite: "juan" }, { frame: 3, sprite: "pepa" }, { frame: 9, sprite: "gerardo" }, { frame: 6, sprite: "paca" },
+{ frame: 0, sprite: "juan" }, { frame: 3, sprite: "pepa" },];
 let game;
 var map;
 var spawnPoint;
@@ -61,8 +62,8 @@ function preload() {
   this.load.tilemapTiledJSON("map", "cliente/assets/tilemaps/tuxemon-town.json");
 
 
-  this.load.spritesheet("varios","cliente/assets/images/final2.png",{frameWidth:24,frameHeight:32});
-  this.load.spritesheet("muertos","cliente/assets/images/muertos.png",{frameWidth:24,frameHeight:32});  
+  this.load.spritesheet("varios", "cliente/assets/images/final2.png", { frameWidth: 24, frameHeight: 32 });
+  this.load.spritesheet("muertos", "cliente/assets/images/muertos.png", { frameWidth: 24, frameHeight: 32 });
 
   this.load.audio("musica", ["cliente/assets/sounds/music/Cancion mas epica.mp3"]);
 
@@ -223,69 +224,36 @@ function create() {
   anims4.create({
     key: "paca-left-walk",
     frames: anims.generateFrameNames("varios", {
-      start: 84,
-      end: 86,
+      start: 42,
+      end: 44,
     }),
     repeat: -1
   });
   anims4.create({
     key: "paca-right-walk",
     frames: anims.generateFrameNames("varios", {
-      start: 60,
-      end: 62,
+      start: 18,
+      end: 20,
     }),
     repeat: -1
   });
   anims4.create({
     key: "paca-front-walk",
     frames: anims.generateFrameNames("varios", {
-      start: 72,
-      end: 74,
+      start: 30,
+      end: 32,
     }),
     repeat: -1
   });
   anims4.create({
     key: "paca-back-walk",
     frames: anims.generateFrameNames("varios", {
-      start: 48,
-      end: 50,
+      start: 6,
+      end: 8,
     }),
     repeat: -1
   });
 
-  const anims5 = crear.anims;
-  anims5.create({
-    key: "manuela-left-walk",
-    frames: anims.generateFrameNames("varios", {
-      start: 87,
-      end: 89,
-    }),
-    repeat: -1
-  });
-  anims5.create({
-    key: "manuela-right-walk",
-    frames: anims.generateFrameNames("varios", {
-      start: 63,
-      end: 65,
-    }),
-    repeat: -1
-  });
-  anims5.create({
-    key: "manuela-front-walk",
-    frames: anims.generateFrameNames("varios", {
-      start: 75,
-      end: 77,
-    }),
-    repeat: -1
-  });
-  anims5.create({
-    key: "manuela-back-walk",
-    frames: anims.generateFrameNames("varios", {
-      start: 51,
-      end: 53,
-    }),
-    repeat: -1
-  });
   remotos = crear.add.group();
   muertos = crear.add.group();
   crearInputTeclas();
